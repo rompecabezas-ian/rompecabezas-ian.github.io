@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rompecabezas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Rompecabezas de Ian</h1>
+    </header>
+    <main>
+        <!-- Contenedor de todos los rompecabezas -->
+        <div id="puzzles-container">
+            <!-- Cada rompecabezas -->
+            <div class="puzzle-wrapper">
+                <div class="puzzle-container" id="puzzle1"></div>
+                <button onclick="resetPuzzle('puzzle1')">Reiniciar Rompecabezas</button>
+            </div>
+            <div class="puzzle-wrapper">
+                <div class="puzzle-container" id="puzzle2"></div>
+                <button onclick="resetPuzzle('puzzle2')">Reiniciar Rompecabezas</button>
+            </div>
+            <div class="puzzle-wrapper">
+                <div class="puzzle-container" id="puzzle3"></div>
+                <button onclick="resetPuzzle('puzzle3')">Reiniciar Rompecabezas</button>
+            </div>
+            <div class="puzzle-wrapper">
+                <div class="puzzle-container" id="puzzle4"></div>
+                <button onclick="resetPuzzle('puzzle4')">Reiniciar Rompecabezas</button>
+            </div>
+            <div class="puzzle-wrapper">
+                <div class="puzzle-container" id="puzzle5"></div>
+                <button onclick="resetPuzzle('puzzle5')">Reiniciar Rompecabezas</button>
+            </div>
+            <div class="puzzle-wrapper">
+                <div class="puzzle-container" id="puzzle6"></div>
+                <button onclick="resetPuzzle('puzzle6')">Reiniciar Rompecabezas</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Rompecabezas de Ian</p>
+    </footer>
+    
+    <audio id="completion-sound">
+    <source src="sonidos/spiderman-ringtones-old.mp3" type="audio/mp3">
+    Tu navegador no soporta audio HTML5.
+</audio>
+<script src="script.js"></script>
+
+</body>
+</html>
