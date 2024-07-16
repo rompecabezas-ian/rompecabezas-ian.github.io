@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
         { id: 'puzzle6', image: 'imagenes/IMG-20240525-WA0002.jpg' }
     ];
 
+    let currentPuzzleIndex = 0;
+
     puzzles.forEach(puzzle => {
         createPuzzle(puzzle.id, puzzle.image);
     });
@@ -134,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function playCompletionSound() {
-        const audio = new Audio('sonidos/spiderman-ringtones-old.mp3'); // Ruta relativa al archivo de sonido de completado
+        const audio = document.getElementById('completion-sound');
         audio.play();
     }
 
@@ -162,6 +164,28 @@ document.addEventListener("DOMContentLoaded", () => {
             parent.replaceChild(this, temp);
         }
 
+        this.style.left = '';
+        this.style.top = '';
+
         checkCompletion(this.parentNode);
     }
+
+    // Funciones para navegación entre rompecabezas
+    window.nextPuzzle = function() {
+        const totalPuzzles = puzzles.length;
+        document.getElementById(`puzzle-page${currentPuzzleIndex + 1}`).style.display = 'none';
+        currentPuzzleIndex = (currentPuzzleIndex + 1) % totalPuzzles;
+        document.getElementById(`puzzle-page${currentPuzzleIndex + 1}`).style.display = 'block';
+    };
+
+    window.prevPuzzle = function() {
+        const totalPuzzles = puzzles.length;
+        document.getElementById(`puzzle-page${currentPuzzleIndex + 1}`).style.display = 'none';
+        currentPuzzleIndex = (currentPuzzleIndex - 1 + totalPuzzles) % totalPuzzles;
+        document.getElementById(`puzzle-page${currentPuzzleIndex + 1}`).style.display = 'block';
+    };
+
+    window.resetCurrentPuzzle = function() {
+        resetPuzzle(puzzles[currentPuzzleIndex].id);
+    };
 });

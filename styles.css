@@ -1,21 +1,28 @@
 /* CSS General */
-body {
-     font-family: 'Copperplate Gothic', sans-serif;
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Evita el desplazamiento */
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    margin: 0;
-    background-image: url('imagenes/el-hombre-arana-lanzando-telarana_3840x2160_xtrafondos.com.jpg'); /* Ruta a tu imagen de fondo */
-    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir toda la pantalla */
-    background-position: center; /* Centra la imagen de fondo */
-    background-repeat: no-repeat; /* Evita que la imagen de fondo se repita */
-    padding-top: 20px;
+    background-color: #f0f0f0;
+    font-family: 'Copperplate Gothic', sans-serif;
+    background-image: url('imagenes/el-hombre-arana-lanzando-telarana_3840x2160_xtrafondos.com.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-header {
-    margin-bottom: 20px;
+header, footer {
+    text-align: center;
+    background-color: #333; /* Color de fondo del encabezado y pie de página */
+    color: white;
+    width: 100%;
+    padding: 1rem;
 }
 
 h1 {
@@ -35,7 +42,21 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center; /* Centrar verticalmente el contenido */
     margin-bottom: 20px;
+    position: relative; /* Añadir posición relativa para el posicionamiento del botón */
+    text-align: center; /* Alinear el contenido del puzzle-wrapper */
+}
+
+.puzzle-wrapper button {
+    margin-top: 10px; /* Ajustar el margen superior del botón */
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    .puzzle-wrapper button {
+        margin-top: 20px; /* Ajustar el margen superior del botón en dispositivos móviles */
+    }
 }
 
 .puzzle-container {
@@ -74,10 +95,39 @@ button {
     background-color: #333;
     color: white;
     border-radius: 10px;
+    margin: 5px; /* Espacio entre los botones */
+    text-align: center; /* Añadido para centrar el texto */
 }
 
 button:hover {
     background-color: blue;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between; /* Distribuye los botones al principio y al final */
+    align-items: flex-start; /* Centra verticalmente los botones */
+    margin-top: -40px;
+    width: 100%; /* Ancho completo para cubrir la pantalla */
+    padding: 5px 5px; /* Ajustar el padding horizontal */
+}
+
+.nav-button {
+    padding: 10px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 10px;
+    display: flex; /* Ajusta el botón para contener la imagen */
+    align-items: center; /* Centra la imagen verticalmente */
+    margin-right: 17px; /* Ajusta el margen derecho según sea necesario */
+}
+
+.nav-button img {
+    width: 40px; /* Ajusta el tamaño de la imagen según tu diseño */
+    height: auto; /* Permite que la altura se ajuste automáticamente al ancho definido */
 }
 
 footer {
@@ -100,6 +150,6 @@ footer {
 
 .completion-indicator img {
     width: 200px; /* Ajustar el tamaño de la imagen del check */
-    height:200px; /* Ajustar el tamaño de la imagen del check */
+    height: 200px; /* Ajustar el tamaño de la imagen del check */
     background-size: cover; /* Ajustar según necesidad */
 }
